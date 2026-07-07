@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página no encontrada - Bucaneer">
+  <meta name="robots" content="noindex">
+  <title>404 - Página no encontrada | Bucaneer</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animaciones.css">
+  <style>
+    /* Estilos específicos del 404 */
+    .pagina-404 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: var(--espacio-2xl) var(--espacio-xl);
+    }
+
+    .pagina-404 figure {
+      margin: var(--espacio-xl) 0;
+    }
+
+    .pagina-404 figure img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radio-xl);
+      box-shadow: var(--sombra-lg);
+      animation: flotar-img 4s ease-in-out infinite;
+    }
+
+    @keyframes flotar-img {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    .pagina-404 h1 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      margin-bottom: var(--espacio-md);
+      color: var(--color-texto);
+    }
+
+    .pagina-404 p {
+      font-size: 1.125rem;
+      color: var(--color-texto-suave);
+      max-width: 480px;
+      margin-bottom: var(--espacio-xl);
+    }
+
+    .acciones-404 {
+      display: flex;
+      gap: var(--espacio-md);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-inicio {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--espacio-xs);
+      padding: var(--espacio-md) var(--espacio-xl);
+      background-color: var(--color-secundario);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radio-full);
+      text-decoration: none;
+      transition: var(--transicion-normal);
+      border: 2px solid var(--color-secundario);
+    }
+
+    .btn-inicio:hover {
+      background-color: var(--color-primario);
+      border-color: var(--color-primario);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(3, 43, 31, 0.35);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-secundario {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--espacio-xs);
+      padding: var(--espacio-md) var(--espacio-xl);
+      background-color: transparent;
+      color: var(--color-secundario);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radio-full);
+      text-decoration: none;
+      transition: var(--transicion-normal);
+      border: 2px solid var(--color-secundario);
+    }
+
+    .btn-secundario:hover {
+      background-color: var(--color-secundario);
+      color: #fff;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .sugerencias-404 {
+      margin-top: var(--espacio-2xl);
+      padding: var(--espacio-xl);
+      background-color: var(--color-fondo-card);
+      border-radius: var(--radio-xl);
+      border: 1px solid var(--color-borde);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .sugerencias-404 h2 {
+      font-size: 1.25rem;
+      margin-bottom: var(--espacio-md);
+      color: var(--color-texto);
+    }
+
+    .sugerencias-404 ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--espacio-sm);
+      text-align: left;
+    }
+
+    .sugerencias-404 ul li a {
+      display: flex;
+      align-items: center;
+      gap: var(--espacio-sm);
+      padding: var(--espacio-sm) var(--espacio-md);
+      border-radius: var(--radio-md);
+      color: var(--color-texto);
+      transition: var(--transicion-rapida);
+      font-weight: 500;
+    }
+
+    .sugerencias-404 ul li a:hover {
+      background-color: rgba(6, 104, 71, 0.1);
+      color: var(--color-secundario);
+      text-decoration: none;
+      padding-left: var(--espacio-lg);
+    }
+  </style>
+
+  <link rel="icon" href="img/ui/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/ui/favicon-16x16.png" sizes="16x16" type="image/png">
+</head>
+<body>
+
+  <div>
+    <p><small>🚚 Envío gratis en compras mayores a RD$5,000</small></p>
+  </div>
+
+  <header>
+    <div>
+      <figure>
+        <a href="index.html">
+          <img src="img/ui/logo.png" alt="Logo Bucaneer — Ir al inicio">
+        </a>
+      </figure>
+      <form action="productos.html" method="get" role="search">
+        <label for="busqueda">Buscar:</label>
+        <input type="search" id="busqueda" name="q" placeholder="Buscar productos..." aria-label="Buscar productos" autocomplete="on">
+        <button type="submit">Buscar</button>
+      </form>
+      <div>
+        <a href="carrito.html" aria-label="Ver carrito">🛒 Carrito</a>
+        <a href="404.html" aria-label="Mi cuenta">👤 Mi cuenta</a>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="productos.html">Ofertas</a></li>
+        <li><a href="acerca.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina-404" aria-labelledby="titulo-404">
+
+      <!-- Número 404 -->
+      <h1 id="titulo-404">¡Ups! Página no encontrada</h1>
+      <p>
+        La página que estás buscando no existe, fue movida o el enlace es incorrecto.
+        No te preocupes, puedes volver al inicio o explorar nuestro catálogo.
+      </p>
+
+      <!-- Imagen 404 -->
+      <figure>
+        <img
+          src="img/ui/404.png"
+          alt="Página no encontrada - Ilustración 404"
+          loading="lazy"
+        >
+        <figcaption style="display: none;">Página no encontrada</figcaption>
+      </figure>
+
+      <!-- Botones de acción -->
+      <div class="acciones-404">
+        <a href="index.html" class="btn-inicio" aria-label="Volver a la página de inicio de Bucaneer">
+          🏠 Volver al Inicio
+        </a>
+        <a href="productos.html" class="btn-secundario" aria-label="Ver catálogo de productos">
+          🛍 Ver Productos
+        </a>
+      </div>
+
+      <!-- Sugerencias de páginas -->
+      <aside class="sugerencias-404" aria-labelledby="titulo-sugerencias">
+        <h2 id="titulo-sugerencias">Quizás buscabas...</h2>
+        <ul>
+          <li>
+            <a href="index.html">🏠 Página Principal</a>
+          </li>
+          <li>
+            <a href="productos.html">📦 Catálogo de Productos</a>
+          </li>
+          <li>
+            <a href="carrito.html">🛒 Mi Carrito</a>
+          </li>
+          <li>
+            <a href="contacto.html">📬 Contacto y Soporte</a>
+          </li>
+          <li>
+            <a href="acerca.html">ℹ️ Acerca de Bucaneer</a>
+          </li>
+        </ul>
+      </aside>
+
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <section aria-label="Bucaneer">
+        <h3>Bucaneer</h3>
+        <p>Tu tienda de tecnología en la República Dominicana.</p>
+      </section>
+      <section aria-label="Navegación rápida">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+        </ul>
+      </section>
+    </div>
+    <address>
+      <strong>Bucaneer</strong> |
+      <a href="tel:+18095551234">809-555-1234</a> |
+      <a href="mailto:contacto@corp.com">contacto@corp.com</a>
+    </address>
+    <p><small>&copy; 2025 Bucaneer. Todos los derechos reservados.</small></p>
+  </footer>
+
+</body>
+</html>

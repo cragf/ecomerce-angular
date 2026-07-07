@@ -1,0 +1,550 @@
+/* ============================================================
+Bucaneer — responsive.css
+Práctica 2: Media Queries — Mobile / Tablet / Desktop
+============================================================ */
+
+/* ============================================================
+MOBILE FIRST — max-width: 768px
+============================================================ */
+@media (max-width: 768px) {
+
+/* Variables ajustadas para móvil */
+:root {
+    --alto-topbar: 0px;
+    --alto-header: 60px;
+    --alto-nav: 0px;
+    --alto-total-header: 60px;
+}
+
+/* Topbar oculta en móvil */
+body > div:first-child {
+    display: none;
+}
+
+/* Header mobile */
+header {
+    top: 0;
+    max-height: 60px;
+}
+
+header:hover {
+    max-height: 500px;
+}
+
+header > div {
+    flex-wrap: wrap;
+    gap: var(--espacio-sm);
+    height: auto;
+    padding: var(--espacio-sm) var(--espacio-md);
+}
+
+header figure img {
+    width: 100px;
+}
+
+/* Buscador ocupa ancho completo en segunda fila */
+header > div > form[role="search"] {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Acciones del usuario */
+header > div > div {
+    gap: var(--espacio-xs);
+}
+
+header > div > div a {
+    font-size: 0.75rem;
+    padding: var(--espacio-xs);
+}
+
+/* Flecha de expandir oculta en móvil */
+header::after {
+    display: none;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: var(--espacio-xs);
+    order: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+    transition: var(--transicion-normal);
+}
+
+header > nav {
+    max-height: 0;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+#menu-check:checked ~ header > nav,
+header > nav:focus-within {
+    max-height: 400px;
+}
+
+header > nav > ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--espacio-sm) var(--espacio-md);
+    gap: 0;
+    height: auto;
+}
+
+header > nav > ul > li {
+    width: 100%;
+}
+
+header > nav > ul > li > a {
+    height: auto;
+    padding: var(--espacio-sm) var(--espacio-md);
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header > nav > ul > li > a::after {
+    display: none;
+}
+
+/* main padding */
+main {
+    padding: calc(var(--alto-total-header) + var(--espacio-lg)) var(--espacio-md) var(--espacio-2xl);
+}
+
+/* HERO BANNER — responsive */
+section[aria-label="Banner promocional principal"] {
+    flex-direction: column;
+    padding: var(--espacio-sm);
+    min-height: auto;
+    margin: 0 calc(-50vw + 50%);
+    width: 100vw;
+}
+
+section[aria-label="Banner promocional principal"] article {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacio-xs);
+    text-align: center;
+}
+
+section[aria-label="Banner promocional principal"] h1 {
+    font-size: 1rem;
+    white-space: normal;
+    width: 100%;
+}
+
+section[aria-label="Banner promocional principal"] article p {
+    white-space: normal;
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+section[aria-label="Banner promocional principal"] article p:last-of-type {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section[aria-label="Banner promocional principal"] article figure {
+    width: 60px;
+    height: 60px;
+    order: -1;
+}
+
+section[aria-label="Banner promocional principal"] article mark {
+    font-size: 0.55rem;
+    padding: 1px 10px;
+}
+
+section[aria-label="Banner promocional principal"] a[href="producto.html"] {
+    width: 100%;
+    justify-content: center;
+    padding: var(--espacio-xs) var(--espacio-md);
+    font-size: 0.8rem;
+}
+
+section[aria-label="Banner promocional principal"] > aside {
+    display: none;
+}
+
+section[aria-label="Banner promocional principal"]::before,
+section[aria-label="Banner promocional principal"]::after {
+    display: none;
+}
+
+/* Categorías: scroll horizontal */
+section[aria-labelledby="titulo-categorias"] nav > ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: var(--espacio-sm);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+/* Productos: 2 columnas en móvil */
+section[aria-labelledby="titulo-productos"] {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-md);
+}
+
+/* Listado con aside: una columna */
+main > div {
+    flex-direction: column;
+}
+
+aside[aria-labelledby="titulo-filtros"] {
+    width: 100%;
+    position: static;
+}
+
+section[aria-labelledby="titulo-listado"] {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Tabla responsive: scroll horizontal */
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Footer: una columna */
+footer > div {
+    flex-direction: column;
+    gap: var(--espacio-lg);
+}
+
+footer section {
+    min-width: 100%;
+}
+
+/* Newsletter footer: columna */
+footer form {
+    flex-direction: column;
+    max-width: 100%;
+    align-items: stretch;
+}
+
+footer form input[type="email"] {
+    border-radius: var(--radio-md);
+    border-right: 2px solid rgba(255,255,255,0.2);
+    margin-bottom: var(--espacio-sm);
+    height: 44px;
+    width: 100%;
+}
+
+footer form input[type="email"]:focus {
+    border-right: 2px solid var(--color-acento);
+}
+
+footer form button {
+    border-radius: var(--radio-md);
+    border-left: 2px solid var(--color-acento);
+    height: 44px;
+    width: 100%;
+}
+
+/* Tipografía */
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+/* Dialog full width */
+dialog {
+    width: 95vw;
+    padding: var(--espacio-lg);
+}
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 480px) {
+section[aria-label="Banner promocional principal"] article figure {
+    width: 50px;
+    height: 50px;
+}
+
+section[aria-label="Banner promocional principal"] h1 {
+    font-size: 0.85rem;
+}
+
+section[aria-label="Banner promocional principal"] article p {
+    font-size: 0.65rem;
+}
+
+section[aria-label="Banner promocional principal"] article p strong {
+    font-size: 0.85rem;
+}
+}
+
+/* ============================================================
+TABLET — min-width: 769px and max-width: 1024px
+============================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+:root {
+    --alto-total-header: calc(var(--alto-topbar) + var(--alto-header) + var(--alto-nav));
+}
+
+main {
+    padding: calc(var(--alto-total-header) + var(--espacio-lg)) var(--espacio-lg) var(--espacio-2xl);
+}
+
+/* Hero: ajustado para tablet */
+section[aria-label="Banner promocional principal"] {
+    padding: var(--espacio-sm) var(--espacio-lg);
+    min-height: 80px;
+}
+
+section[aria-label="Banner promocional principal"] article {
+    gap: var(--espacio-md);
+}
+
+section[aria-label="Banner promocional principal"] h1 {
+    font-size: 1.2rem;
+}
+
+section[aria-label="Banner promocional principal"] > aside {
+    display: none;
+}
+
+/* Productos: 3 columnas en tablet */
+section[aria-labelledby="titulo-productos"] {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Listado: aside más estrecho */
+aside[aria-labelledby="titulo-filtros"] {
+    width: 220px;
+}
+
+section[aria-labelledby="titulo-listado"] {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Nav: reducir padding */
+header > nav > ul > li > a {
+    padding: 0 var(--espacio-md);
+    font-size: 0.875rem;
+}
+
+/* Footer: 2 columnas */
+footer > div {
+    gap: var(--espacio-lg);
+}
+
+footer section {
+    min-width: 45%;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.625rem; }
+}
+
+/* ============================================================
+DESKTOP — min-width: 1025px
+============================================================ */
+@media (min-width: 1025px) {
+
+/* Productos: 4 columnas */
+section[aria-labelledby="titulo-productos"] {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Listado: 3 columnas */
+section[aria-labelledby="titulo-listado"] {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Hero: completo */
+section[aria-label="Banner promocional principal"] {
+    min-height: 100px;
+}
+
+/* Footer: fila completa */
+footer section {
+    min-width: 160px;
+}
+}
+
+/* ============================================================
+EXTRA LARGE — min-width: 1280px
+============================================================ */
+@media (min-width: 1280px) {
+section[aria-labelledby="titulo-productos"] {
+    grid-template-columns: repeat(4, 1fr);
+}
+}
+
+/* ============================================================
+PRINT — Estilos de impresión
+============================================================ */
+@media print {
+body > div:first-child,
+header > nav,
+footer,
+button,
+aside[aria-labelledby="titulo-filtros"],
+section[aria-label="Banner promocional principal"] {
+    display: none !important;
+}
+
+header {
+    position: static;
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+}
+
+header::after {
+    display: none !important;
+}
+
+main {
+    padding-top: 0;
+}
+
+a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+}
+
+table {
+    page-break-inside: avoid;
+}
+}
+/* ============================================================
+CATEGORÍAS BARRA LATERAL — RESPONSIVE
+============================================================ */
+
+@media (max-width: 1024px) {
+.categorias-productos-wrapper {
+    flex-direction: column;
+}
+
+.categorias-sidebar {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espacio-md);
+    padding: var(--espacio-md);
+}
+
+.categorias-sidebar h2 {
+    width: 100%;
+    margin-bottom: var(--espacio-xs);
+    border-bottom: none;
+    font-size: 1rem;
+}
+
+.categorias-sidebar nav {
+    width: 100%;
+}
+
+.categorias-sidebar nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
+}
+
+.categorias-sidebar nav ul li a {
+    padding: var(--espacio-xs) var(--espacio-md);
+    font-size: 0.8rem;
+    background-color: var(--color-fondo);
+    border-radius: var(--radio-full);
+}
+
+.categorias-sidebar nav ul li a img {
+    width: 24px;
+    height: 24px;
+}
+
+.categorias-sidebar nav ul li a:hover {
+    padding-left: var(--espacio-md);
+}
+
+.productos-destacados {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media (max-width: 768px) {
+.categorias-sidebar nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: var(--espacio-xs);
+}
+
+.categorias-sidebar nav ul li a {
+    white-space: nowrap;
+    font-size: 0.75rem;
+    padding: var(--espacio-xs) var(--espacio-md);
+}
+
+.categorias-sidebar nav ul li a img {
+    width: 20px;
+    height: 20px;
+}
+
+.productos-destacados {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-md);
+}
+}
+
+@media (max-width: 480px) {
+.productos-destacados {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-sm);
+}
+
+.productos-destacados article figure img {
+    height: 120px;
+}
+
+.productos-destacados article h3 {
+    font-size: 0.8rem;
+}
+
+.productos-destacados article p {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 2;
+}
+
+.productos-destacados article footer a,
+.productos-destacados article footer button {
+    font-size: 0.65rem;
+    padding: var(--espacio-xs) var(--espacio-sm);
+}
+
+.categorias-sidebar {
+    padding: var(--espacio-sm);
+}
+
+.categorias-sidebar nav ul li a {
+    font-size: 0.7rem;
+    padding: var(--espacio-xs) var(--espacio-sm);
+}
+
+.categorias-sidebar nav ul li a img {
+    width: 18px;
+    height: 18px;
+}
+}

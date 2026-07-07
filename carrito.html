@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Carrito de compras - Bucaneer">
+<meta name="author" content="Bucaneer">
+<title>Carrito de Compras - Bucaneer</title>
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animaciones.css">
+
+<link rel="icon" href="img/ui/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="img/ui/favicon-16x16.png" sizes="16x16" type="image/png">
+</head>
+<body>
+
+<div>
+    <p><small>🚚 Envío gratis en compras mayores a RD$5,000</small></p>
+</div>
+
+<header>
+    <div>
+    <figure>
+        <a href="index.html">
+        <img src="img/ui/logo.png" alt="Logo Bucaneer — Ir al inicio">
+        </a>
+    </figure>
+    <form action="productos.html" method="get" role="search">
+        <label for="busqueda">Buscar:</label>
+        <input type="search" id="busqueda" name="q" placeholder="Buscar productos..." aria-label="Buscar productos" autocomplete="on">
+        <button type="submit">Buscar</button>
+    </form>
+    <div>
+        <a href="carrito.html" aria-label="Ver carrito" aria-current="page">🛒 Carrito <strong>(3)</strong></a>
+        <a href="404.html" aria-label="Mi cuenta">👤 Mi cuenta</a>
+    </div>
+    </div>
+    <nav aria-label="Navegación principal">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="productos.html">Ofertas</a></li>
+        <li><a href="acerca.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    </nav>
+</header>
+
+<main>
+
+    <nav aria-label="Ruta de navegación (breadcrumb)">
+    <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li>Carrito de compras</li>
+    </ol>
+    </nav>
+
+    <h1>Carrito de Compras</h1>
+
+    <!-- ==================== PROGRESO DEL PEDIDO ==================== -->
+    <section aria-labelledby="titulo-progreso">
+    <h2 id="titulo-progreso">Progreso del pedido</h2>
+
+    <ol aria-label="Pasos del proceso de compra">
+        <li><strong>1. Carrito</strong> ← Estás aquí</li>
+        <li>2. Datos de envío</li>
+        <li>3. Pago</li>
+        <li>4. Confirmación</li>
+    </ol>
+
+    <label for="progreso-pedido">Avance del proceso:</label>
+    <progress id="progreso-pedido" value="1" max="4" aria-label="Paso 1 de 4 del proceso de compra">
+        Paso 1 de 4
+    </progress>
+    <p><small>Paso 1 de 4 — Revisa tu carrito</small></p>
+    </section>
+
+    <hr>
+
+    <!-- ==================== TABLA DEL CARRITO ==================== -->
+    <section aria-labelledby="titulo-carrito">
+    <h2 id="titulo-carrito">Mis productos</h2>
+
+    <table aria-describedby="desc-carrito">
+        <caption>Lista de productos en tu carrito de compras</caption>
+        <thead>
+        <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio unitario</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descuento</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Producto 1 -->
+        <tr>
+            <td>
+            <figure>
+                <img src="img/productos/macbook-air.jpg" alt="Apple MacBook Air M2 plateado" width="70" height="70">
+                <figcaption>
+                <strong>Apple MacBook Air M2</strong><br>
+                <small>Color: Plateado | SKU: <data value="SKU-2001">MBX-M2-256</data></small>
+                </figcaption>
+            </figure>
+            </td>
+            <td>RD$76,800</td>
+            <td>
+            <form action="#" method="post" aria-label="Actualizar cantidad MacBook Air M2">
+                <label for="qty-1" class="sr-only">Cantidad:</label>
+                <input type="number" id="qty-1" name="cantidad_1" value="1" min="1" max="10" aria-label="Cantidad de MacBook Air M2">
+                <button type="submit" aria-label="Actualizar cantidad">Actualizar</button>
+            </form>
+            </td>
+            <td>
+            <meter
+                value="13"
+                min="0"
+                max="100"
+                low="5"
+                high="20"
+                optimum="15"
+                aria-label="Descuento del 13% en MacBook Air M2"
+            >13%</meter>
+            <small>13% OFF</small>
+            </td>
+            <td><strong>RD$66,800</strong></td>
+            <td>
+            <button type="button" aria-label="Eliminar MacBook Air M2 del carrito">🗑 Eliminar</button>
+            <button type="button" aria-label="Guardar MacBook Air M2 en favoritos">♥ Guardar</button>
+            </td>
+        </tr>
+
+        <!-- Producto 2 -->
+        <tr>
+            <td>
+            <figure>
+                <img src="img/productos/airpods-pro.jpg" alt="Apple AirPods Pro 2da generación" width="70" height="70">
+                <figcaption>
+                <strong>AirPods Pro (2da Gen)</strong><br>
+                <small>Color: Blanco | SKU: <data value="SKU-3001">APP-PRO-2</data></small>
+                </figcaption>
+            </figure>
+            </td>
+            <td>RD$17,700</td>
+            <td>
+            <form action="#" method="post" aria-label="Actualizar cantidad AirPods Pro">
+                <label for="qty-2" class="sr-only">Cantidad:</label>
+                <input type="number" id="qty-2" name="cantidad_2" value="1" min="1" max="10" aria-label="Cantidad de AirPods Pro">
+                <button type="submit" aria-label="Actualizar cantidad">Actualizar</button>
+            </form>
+            </td>
+            <td>
+            <meter
+                value="0"
+                min="0"
+                max="100"
+                aria-label="Sin descuento en AirPods Pro"
+            >0%</meter>
+            <small>Sin descuento</small>
+            </td>
+            <td><strong>RD$17,700</strong></td>
+            <td>
+            <button type="button" aria-label="Eliminar AirPods Pro del carrito">🗑 Eliminar</button>
+            <button type="button" aria-label="Guardar AirPods Pro en favoritos">♥ Guardar</button>
+            </td>
+        </tr>
+
+        <!-- Producto 3 -->
+        <tr>
+            <td>
+            <figure>
+                <img src="img/productos/logitech-mouse.jpg" alt="Mouse Logitech MX Master 3S negro" width="70" height="70">
+                <figcaption>
+                <strong>Logitech MX Master 3S</strong><br>
+                <small>Color: Negro | SKU: <data value="SKU-4001">LOG-MX3S</data></small>
+                </figcaption>
+            </figure>
+            </td>
+            <td>RD$7,700</td>
+            <td>
+            <form action="#" method="post" aria-label="Actualizar cantidad MX Master 3S">
+                <label for="qty-3" class="sr-only">Cantidad:</label>
+                <input type="number" id="qty-3" name="cantidad_3" value="2" min="1" max="10" aria-label="Cantidad de Logitech MX Master 3S">
+                <button type="submit" aria-label="Actualizar cantidad">Actualizar</button>
+            </form>
+            </td>
+            <td>
+            <meter
+                value="10"
+                min="0"
+                max="100"
+                low="5"
+                high="25"
+                optimum="10"
+                aria-label="Descuento del 10% en MX Master 3S"
+            >10%</meter>
+            <small>10% OFF</small>
+            </td>
+            <td><strong>RD$13,800</strong></td>
+            <td>
+            <button type="button" aria-label="Eliminar MX Master 3S del carrito">🗑 Eliminar</button>
+            <button type="button" aria-label="Guardar MX Master 3S en favoritos">♥ Guardar</button>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr>
+            <td colspan="4"><strong>Subtotal productos:</strong></td>
+            <td colspan="2"><strong>RD$98,400</strong></td>
+        </tr>
+        <tr>
+            <td colspan="4">Envío:</td>
+            <td colspan="2"><ins>Gratis</ins></td>
+        </tr>
+        <tr>
+            <td colspan="4"><abbr title="Impuesto al Valor Agregado">ITBIS</abbr> (18%):</td>
+            <td colspan="2">RD$18,700</td>
+        </tr>
+        <tr>
+            <td colspan="4"><strong>Total a pagar:</strong></td>
+            <td colspan="2"><strong>RD$117,100</strong></td>
+        </tr>
+        </tfoot>
+    </table>
+    <p id="desc-carrito"><small>Los precios incluyen IVA. El envío es gratis para compras mayores a RD$5,000.</small></p>
+    </section>
+
+    <hr>
+
+    <!-- ==================== MEDIDORES Y MÉTRICAS ==================== -->
+    <section aria-labelledby="titulo-metricas">
+    <h2 id="titulo-metricas">Métricas de tu compra</h2>
+
+    <div>
+        <label for="nivel-descuento">Nivel de descuento total obtenido:</label>
+        <meter
+        id="nivel-descuento"
+        value="75"
+        min="0"
+        max="100"
+        low="25"
+        high="60"
+        optimum="80"
+        aria-label="75% de descuento máximo posible aprovechado"
+        >75%</meter>
+        <p>Estás aprovechando el <strong>75%</strong> de los descuentos disponibles. ¡Bien hecho!</p>
+    </div>
+
+    <div>
+        <label for="umbral-envio">Progreso hacia envío gratis:</label>
+        <meter
+        id="umbral-envio"
+        value="1664963"
+        min="0"
+        max="50000"
+        aria-label="Monto actual supera el umbral de envío gratis"
+        >Superado</meter>
+        <p>✅ ¡Felicitaciones! Tu compra califica para <strong>envío gratis</strong>.</p>
+    </div>
+
+    <div>
+        <label for="prog-pasos">Progreso de la compra (paso actual):</label>
+        <progress id="prog-pasos" value="3" max="10" aria-label="3 de 10 pasos completados en el proceso de compra">
+        30% completado
+        </progress>
+        <p><small>3 de 10 pasos completados del proceso de pedido</small></p>
+    </div>
+    </section>
+
+    <hr>
+
+    <!-- ==================== CUPÓN DE DESCUENTO ==================== -->
+    <section aria-labelledby="titulo-cupon">
+    <h2 id="titulo-cupon">¿Tienes un cupón de descuento?</h2>
+    <form action="#" method="post" aria-label="Formulario de cupón de descuento">
+        <label for="cupon">Código de cupón:</label>
+        <input
+        type="text"
+        id="cupon"
+        name="cupon"
+        placeholder="Ej: TECH2024"
+        pattern="[A-Z0-9]{4,12}"
+        aria-describedby="cupon-ayuda"
+        autocomplete="off"
+        >
+        <p id="cupon-ayuda"><small>Ingresa el código en mayúsculas, entre 4 y 12 caracteres.</small></p>
+        <button type="submit">Aplicar cupón</button>
+    </form>
+    </section>
+
+    <!-- ==================== ACCIONES DEL CARRITO ==================== -->
+    <section aria-labelledby="titulo-acciones">
+    <h2 id="titulo-acciones">Resumen y acciones</h2>
+    <p><small>⚠️ Los botones de acción (vaciar carrito, actualizar cantidades) requieren JavaScript y serán funcionales en la Práctica 3.</small></p>
+    <p>Total a pagar: <strong>RD$117,100</strong> (IVA incluido)</p>
+    <ul>
+        <li><a href="productos.html">← Seguir comprando</a></li>
+        <li><button type="button" aria-label="Vaciar carrito completo" title="Requiere JavaScript (Práctica 3)">🗑 Vaciar carrito</button></li>
+        <li><a href="contacto.html" aria-label="Proceder al pago">Proceder al pago →</a></li>
+    </ul>
+    </section>
+
+    <!-- ==================== PRODUCTOS SUGERIDOS ==================== -->
+    <section aria-labelledby="titulo-sugeridos">
+    <h2 id="titulo-sugeridos">También te puede interesar</h2>
+    <ul>
+        <li>
+        <article>
+            <figure>
+            <img src="img/productos/magic-kb.jpg" alt="Apple Magic Keyboard con Touch ID" width="120" height="120">
+            </figure>
+            <h3><a href="producto.html">Magic Keyboard con Touch ID</a></h3>
+            <p><strong>RD$7,100</strong></p>
+            <button type="button" aria-label="Agregar Magic Keyboard al carrito">🛒 Agregar</button>
+        </article>
+        </li>
+        <li>
+        <article>
+            <figure>
+            <img src="img/productos/usb-hub.jpg" alt="Hub USB-C 7 en 1" width="120" height="120">
+            </figure>
+            <h3><a href="producto.html">Hub USB-C 7 en 1</a></h3>
+            <p><strong>RD$2,400</strong></p>
+            <button type="button" aria-label="Agregar Hub USB-C al carrito">🛒 Agregar</button>
+        </article>
+        </li>
+        <li>
+        <article>
+            <figure>
+            <img src="img/productos/sleeve-mb.jpg" alt="Funda para MacBook Air 13 pulgadas" width="120" height="120">
+            </figure>
+            <h3><a href="producto.html">Funda MacBook Air 13"</a></h3>
+            <p><strong>RD$1,800</strong></p>
+            <button type="button" aria-label="Agregar funda MacBook al carrito">🛒 Agregar</button>
+        </article>
+        </li>
+    </ul>
+    </section>
+
+</main>
+
+<footer>
+    <address>
+    <strong>Bucaneer</strong> |
+    <a href="tel:+18095551234">809-555-1234</a> |
+    <a href="mailto:contacto@corp.com">contacto@corp.com</a>
+    </address>
+    <p><small>&copy; 2025 Bucaneer. Todos los derechos reservados.</small></p>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/carrito.js"></script>
+</body>
+</html>

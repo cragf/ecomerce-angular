@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctanos en Bucaneer. Estamos disponibles 24/7 para ayudarte.">
+  <meta name="author" content="Bucaneer">
+  <title>Contacto - Bucaneer</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animaciones.css">
+
+  <link rel="icon" href="img/ui/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/ui/favicon-16x16.png" sizes="16x16" type="image/png">
+</head>
+<body>
+
+  <div>
+    <p><small>🚚 Envío gratis en compras mayores a RD$5,000</small></p>
+  </div>
+
+  <header>
+    <div>
+      <figure>
+        <a href="index.html">
+          <img src="img/ui/logo.png" alt="Logo Bucaneer — Ir al inicio">
+        </a>
+      </figure>
+      <form action="productos.html" method="get" role="search">
+        <label for="busqueda">Buscar:</label>
+        <input type="search" id="busqueda" name="q" placeholder="Buscar productos..." aria-label="Buscar productos">
+        <button type="submit">Buscar</button>
+      </form>
+      <div>
+        <a href="carrito.html" aria-label="Ver carrito">🛒 Carrito</a>
+        <a href="404.html" aria-label="Mi cuenta">👤 Mi cuenta</a>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="productos.html">Ofertas</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">Contacto</li>
+      </ol>
+    </nav>
+
+    <h1>Contáctanos</h1>
+    <p>Nuestro equipo está disponible <strong>24/7</strong> para ayudarte. Completa el formulario y te responderemos en menos de 24 horas.</p>
+
+    <div>
+
+      <!-- ==================== FORMULARIO COMPLETO ==================== -->
+      <section aria-labelledby="titulo-formulario">
+        <h2 id="titulo-formulario">Formulario de contacto</h2>
+
+        <form action="#" method="post" id="form-contacto" novalidate aria-label="Formulario de contacto con Bucaneer">
+
+          <!-- Campo oculto -->
+          <input type="hidden" name="origen" value="pagina-contacto">
+          <input type="hidden" name="version" value="1.0">
+
+          <!-- ── Datos personales ── -->
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <div>
+              <label for="nombre">
+                Nombre completo: <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Ej: María González"
+                required
+                minlength="3"
+                maxlength="80"
+                autocomplete="name"
+                aria-required="true"
+                aria-describedby="nombre-ayuda"
+              >
+              <small id="nombre-ayuda">Ingresa tu nombre y apellido completo.</small>
+            </div>
+
+            <div>
+              <label for="email">
+                Correo electrónico: <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="correo@ejemplo.com"
+                required
+                autocomplete="email"
+                aria-required="true"
+                aria-describedby="email-ayuda"
+                multiple
+              >
+              <small id="email-ayuda">Puedes ingresar varios correos separados por coma.</small>
+            </div>
+
+            <div>
+              <label for="contrasena">Crear contraseña para tu cuenta:</label>
+              <input
+                type="password"
+                id="contrasena"
+                name="contrasena"
+                placeholder="Mínimo 8 caracteres"
+                minlength="8"
+                maxlength="32"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                autocomplete="new-password"
+                aria-describedby="contrasena-ayuda"
+              >
+              <small id="contrasena-ayuda">Debe incluir al menos 1 número, 1 minúscula y 1 mayúscula.</small>
+            </div>
+
+            <div>
+              <label for="telefono">
+                Teléfono: <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="+56 9 1234 5678"
+                required
+                pattern="[\+]?[0-9\s\-]{8,15}"
+                autocomplete="tel"
+                aria-required="true"
+                aria-describedby="telefono-ayuda"
+              >
+              <small id="telefono-ayuda">Incluye el código de país. Ej: +56 9 1234 5678</small>
+            </div>
+
+            <div>
+              <label for="sitio-web">Sitio web (opcional):</label>
+              <input
+                type="url"
+                id="sitio-web"
+                name="sitio_web"
+                placeholder="https://tu-sitio.com"
+                autocomplete="url"
+                aria-describedby="url-ayuda"
+              >
+              <small id="url-ayuda">Incluye https:// al inicio de la URL.</small>
+            </div>
+
+            <div>
+              <label for="edad">Edad:</label>
+              <input
+                type="number"
+                id="edad"
+                name="edad"
+                min="13"
+                max="120"
+                step="1"
+                placeholder="25"
+                aria-describedby="edad-ayuda"
+              >
+              <small id="edad-ayuda">Debes tener al menos 13 años para registrarte.</small>
+            </div>
+
+          </fieldset>
+
+          <!-- ── Fecha y hora de contacto preferida ── -->
+          <fieldset>
+            <legend>Preferencias de contacto</legend>
+
+            <div>
+              <label for="fecha-contacto">Fecha preferida de contacto:</label>
+              <input
+                type="date"
+                id="fecha-contacto"
+                name="fecha_contacto"
+                min="2024-01-01"
+                max="2025-12-31"
+                aria-label="Seleccionar fecha preferida para ser contactado"
+              >
+            </div>
+
+            <div>
+              <label for="hora-contacto">Fecha y hora exacta (opcional):</label>
+              <input
+                type="datetime-local"
+                id="hora-contacto"
+                name="hora_contacto"
+                aria-label="Seleccionar fecha y hora exacta para contacto"
+              >
+            </div>
+
+            <div>
+              <label for="metodo-contacto">Medio de contacto preferido:</label>
+              <select id="metodo-contacto" name="metodo_contacto" aria-label="Seleccionar cómo desea ser contactado">
+                <option value="">Selecciona una opción...</option>
+                <optgroup label="Digital">
+                  <option value="email">Correo electrónico</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="chat">Chat en línea</option>
+                </optgroup>
+                <optgroup label="Telefónico">
+                  <option value="llamada">Llamada telefónica</option>
+                  <option value="videollamada">Videollamada</option>
+                </optgroup>
+              </select>
+            </div>
+
+          </fieldset>
+
+          <!-- ── Consulta ── -->
+          <fieldset>
+            <legend>Tu consulta</legend>
+
+            <div>
+              <label for="asunto">
+                Asunto: <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <select id="asunto" name="asunto" required aria-required="true" aria-label="Seleccionar el asunto de tu consulta">
+                <option value="">Selecciona el asunto...</option>
+                <option value="pedido">Consulta sobre pedido</option>
+                <option value="devolucion">Devolución o garantía</option>
+                <option value="producto">Información de producto</option>
+                <option value="pago">Problemas con pago</option>
+                <option value="envio">Seguimiento de envío</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="numero-orden">Número de orden (si aplica):</label>
+              <input
+                type="text"
+                id="numero-orden"
+                name="numero_orden"
+                placeholder="Ej: ORD-2024-0001"
+                pattern="ORD-[0-9]{4}-[0-9]{4}"
+                aria-describedby="orden-ayuda"
+                readonly
+                onfocus="this.removeAttribute('readonly')"
+              >
+              <small id="orden-ayuda">Formato: ORD-AAAA-NNNN. Encuéntralo en tu email de confirmación.</small>
+            </div>
+
+            <div>
+              <label for="mensaje">
+                Mensaje: <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="6"
+                cols="50"
+                placeholder="Describe tu consulta con el mayor detalle posible..."
+                required
+                minlength="20"
+                maxlength="1000"
+                aria-required="true"
+                aria-describedby="mensaje-ayuda"
+              ></textarea>
+              <small id="mensaje-ayuda">Mínimo 20 caracteres, máximo 1000.</small>
+            </div>
+
+          </fieldset>
+
+          <!-- ── Personalización ── -->
+          <fieldset>
+            <legend>Personalización (opcional)</legend>
+
+            <div>
+              <label for="color-favorito">Tu color favorito:</label>
+              <input
+                type="color"
+                id="color-favorito"
+                name="color_favorito"
+                value="#1E3A8A"
+                aria-label="Seleccionar color favorito para personalizar tu experiencia"
+              >
+            </div>
+
+            <div>
+              <label for="satisfaccion">Nivel de satisfacción actual (1-10):</label>
+              <input
+                type="range"
+                id="satisfaccion"
+                name="satisfaccion"
+                min="1"
+                max="10"
+                step="1"
+                value="7"
+                aria-label="Deslizar para indicar nivel de satisfacción del 1 al 10"
+                aria-describedby="satisfaccion-ayuda"
+              >
+              <output for="satisfaccion" id="satisfaccion-ayuda">7</output>
+            </div>
+
+          </fieldset>
+
+          <!-- ── Archivos adjuntos ── -->
+          <fieldset>
+            <legend>Archivos adjuntos</legend>
+
+            <div>
+              <label for="adjunto">Adjuntar imagen o documento:</label>
+              <input
+                type="file"
+                id="adjunto"
+                name="adjunto"
+                accept="image/*,.pdf,.doc,.docx"
+                multiple
+                aria-describedby="adjunto-ayuda"
+              >
+              <small id="adjunto-ayuda">Formatos aceptados: JPG, PNG, PDF, DOC. Máximo 5MB por archivo.</small>
+            </div>
+
+          </fieldset>
+
+          <!-- ── Preferencias de comunicación ── -->
+          <fieldset>
+            <legend>Preferencias de comunicación</legend>
+
+            <p>¿Cómo te enteraste de nosotros?</p>
+            <label><input type="radio" name="origen_conocimiento" value="google" required> Google</label>
+            <label><input type="radio" name="origen_conocimiento" value="redes"> Redes sociales</label>
+            <label><input type="radio" name="origen_conocimiento" value="amigo"> Recomendación de amigo</label>
+            <label><input type="radio" name="origen_conocimiento" value="publicidad"> Publicidad</label>
+            <label><input type="radio" name="origen_conocimiento" value="otro"> Otro</label>
+
+            <p>Suscripciones:</p>
+            <label>
+              <input type="checkbox" name="newsletter" value="si">
+              Quiero recibir ofertas y novedades por email
+            </label>
+            <label>
+              <input type="checkbox" name="sms" value="si">
+              Quiero recibir notificaciones por SMS
+            </label>
+            <label>
+              <input type="checkbox" name="terminos" value="aceptado" required aria-required="true">
+              He leído y acepto los <a href="404.html">términos y condiciones</a> y la <a href="404.html">política de privacidad</a> <abbr title="Campo obligatorio" aria-label="obligatorio">*</abbr>
+            </label>
+
+            <!-- Campo deshabilitado como ejemplo -->
+            <label for="campo-deshabilitado">Campo de solo lectura (ejemplo):</label>
+            <input
+              type="text"
+              id="campo-deshabilitado"
+              name="campo_demo"
+              value="Este campo está deshabilitado"
+              disabled
+              aria-disabled="true"
+              aria-label="Ejemplo de campo deshabilitado"
+            >
+          </fieldset>
+
+          <!-- Botones de acción -->
+          <div>
+            <button type="submit" aria-label="Enviar formulario de contacto">📨 Enviar mensaje</button>
+            <button type="reset" aria-label="Limpiar todos los campos del formulario">🗑 Limpiar formulario</button>
+          </div>
+
+          <!-- Output dinámico (para JS futuro) -->
+          <output id="resultado-formulario" name="resultado" for="nombre email mensaje" aria-live="polite"></output>
+
+        </form>
+      </section>
+
+      <!-- ==================== INFO DE CONTACTO ==================== -->
+      <aside aria-labelledby="titulo-info-contacto">
+        <h2 id="titulo-info-contacto">Información de contacto</h2>
+
+        <address>
+          <p>
+            <strong>Bucaneer</strong><br>
+            Av. Tecnología 1234, Piso 5<br>
+            Santo Domingo, República Dominicana<br>
+            <abbr title="Código Postal">CP</abbr> 8320000
+          </p>
+          <p>
+            📞 <a href="tel:+18095551234">809-555-1234</a><br>
+            📱 <a href="tel:+56912345678">+56 9 1234 5678</a> (WhatsApp)<br>
+            ✉ <a href="mailto:contacto@corp.com">contacto@corp.com</a><br>
+            🌐 <a href="https://www.Bucaneerrd.com" target="_blank" rel="noopener noreferrer">www.Bucaneerrd.com</a>
+          </p>
+        </address>
+
+        <section aria-labelledby="titulo-horarios">
+          <h3 id="titulo-horarios">Horarios de atención</h3>
+          <dl>
+            <dt>Lunes a Viernes:</dt>
+            <dd><time datetime="09:00">9:00</time> – <time datetime="18:00">18:00</time></dd>
+            <dt>Sábados:</dt>
+            <dd><time datetime="10:00">10:00</time> – <time datetime="14:00">14:00</time></dd>
+            <dt>Domingos y festivos:</dt>
+            <dd>Cerrado</dd>
+            <dt>Chat en línea:</dt>
+            <dd>24/7 todos los días</dd>
+          </dl>
+        </section>
+
+        <section aria-labelledby="titulo-preguntas">
+          <h3 id="titulo-preguntas">Preguntas frecuentes</h3>
+          <details>
+            <summary>¿Cuánto demora el envío?</summary>
+            <p>Los envíos estándar tardan de 3 a 5 días hábiles. El envío express llega en 24 horas.</p>
+          </details>
+          <details>
+            <summary>¿Cómo hago una devolución?</summary>
+            <p>Tienes 30 días desde la recepción del producto para solicitar una devolución. Escríbenos a <a href="mailto:contacto@corp.com">contacto@corp.com</a>.</p>
+          </details>
+          <details>
+            <summary>¿Aceptan tarjetas internacionales?</summary>
+            <p>Sí, aceptamos Visa, Mastercard y American Express de cualquier país.</p>
+          </details>
+        </section>
+
+        <section aria-labelledby="titulo-redes-contacto">
+          <h3 id="titulo-redes-contacto">Síguenos en redes</h3>
+          <ul>
+            <li><a href="404.html" aria-label="Facebook de Bucaneer">📘 Facebook</a></li>
+            <li><a href="404.html" aria-label="Instagram de Bucaneer">📷 Instagram</a></li>
+            <li><a href="404.html" aria-label="Twitter de Bucaneer">🐦 Twitter / X</a></li>
+            <li><a href="404.html" aria-label="YouTube de Bucaneer">▶ YouTube</a></li>
+            <li><a href="404.html" aria-label="TikTok de Bucaneer">🎵 TikTok</a></li>
+          </ul>
+        </section>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <address>
+      <strong>Bucaneer</strong> |
+      <a href="tel:+18095551234">809-555-1234</a> |
+      <a href="mailto:contacto@corp.com">contacto@corp.com</a>
+    </address>
+    <p><small>&copy; 2025 Bucaneer. Todos los derechos reservados.</small></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/validaciones.js"></script>
+</body>
+</html>

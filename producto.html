@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detalles del producto - Bucaneer">
+  <meta name="author" content="Bucaneer">
+  <title id="titulo-pagina">Producto - Bucaneer</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animaciones.css">
+
+  <link rel="icon" href="img/ui/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/ui/favicon-16x16.png" sizes="16x16" type="image/png">
+</head>
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+  <div>
+    <p><small>🚚 Envío gratis en compras mayores a RD$5,000</small></p>
+  </div>
+
+  <!-- ==================== HEADER PRINCIPAL ==================== -->
+  <header>
+    <div>
+      <figure>
+        <a href="index.html">
+          <img src="img/ui/logo.png" alt="Logo Bucaneer — Ir al inicio">
+        </a>
+      </figure>
+      <form action="productos.html" method="get" role="search">
+        <label for="busqueda">Buscar:</label>
+        <input type="search" id="busqueda" name="q" placeholder="Buscar productos..." aria-label="Buscar productos" autocomplete="on">
+        <button type="submit">Buscar</button>
+      </form>
+      <div>
+        <a href="carrito.html" aria-label="Ver carrito">🛒 Carrito <span id="carrito-contador">0</span></a>
+        <a href="404.html" aria-label="Mi cuenta">👤 Mi cuenta</a>
+      </div>
+    </div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="productos.html">Ofertas</a></li>
+        <li><a href="productos.html">Novedades</a></li>
+        <li><a href="acerca.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ==================== BREADCRUMB ==================== -->
+    <nav aria-label="Ruta de navegación (breadcrumb)">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li id="breadcrumb-categoria"><a href="productos.html">Laptops</a></li>
+        <li id="breadcrumb-producto">MacBook Air M2</li>
+      </ol>
+    </nav>
+
+    <!-- ==================== ARTÍCULO PRODUCTO ==================== -->
+    <article aria-labelledby="nombre-producto">
+
+      <!-- ========================================================== -->
+      <!-- HEADER DEL ARTÍCULO — SOLO TÍTULO Y DATOS BÁSICOS        -->
+      <!-- ========================================================== -->
+      <header>
+        <h1 id="nombre-producto">Piedra filosofal</h1>
+        <p id="info-producto">
+          Marca: <strong id="marca-producto">Apple</strong> |
+          SKU: <data id="sku-producto" value="SKU-2001">MBX-M2-256</data> |
+          Categoría: <a href="productos.html" id="categoria-producto">Laptops</a>
+        </p>
+        <p id="rating-producto">⭐⭐⭐⭐⭐ <a href="#resenas"><small>(312 reseñas)</small></a></p>
+      </header>
+
+      <!-- ========================================================== -->
+      <!-- GALERÍA MULTIMEDIA                                        -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-galeria">
+        <h2 id="titulo-galeria">Galería de imágenes</h2>
+
+        <figure>
+          <picture>
+            <source media="(min-width: 800px)" srcset="img/productos/macbook-air.jpg" type="image/webp">
+            <source media="(min-width: 600px)" srcset="img/productos/macbook-air.jpg">
+            <img
+              src="img/productos/macbook-air.jpg"
+              alt="Piedra filosofal en color plateado"
+              id="img-principal"
+              width="600"
+              height="150"
+              loading="lazy"
+            >
+          </picture>
+          <figcaption id="img-caption">Piedra filosofal</figcaption>
+        </figure>
+
+        <div class="galeria-miniaturas" id="galeria-miniaturas">
+          <figure>
+            <img src="img/ui/macbook-thumb1.jpg" alt="Vista frontal abierta" width="80" height="60" loading="lazy">
+            <figcaption>Vista frontal</figcaption>
+          </figure>
+          <figure>
+            <img src="img/ui/macbook-thumb2.jpg" alt="Vista lateral cerrado" width="80" height="60" loading="lazy">
+            <figcaption>Vista lateral</figcaption>
+          </figure>
+          <figure>
+            <img src="img/ui/macbook-thumb3.jpg" alt="Teclado y trackpad" width="80" height="60" loading="lazy">
+            <figcaption>Teclado</figcaption>
+          </figure>
+          <figure>
+            <img src="img/ui/macbook-thumb4.jpg" alt="Puertos MagSafe y USB-C" width="80" height="60" loading="lazy">
+            <figcaption>Puertos</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- INFO Y PRECIO                                             -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-info-compra">
+        <h2 id="titulo-info-compra">Información de compra</h2>
+        <p>Precio: <strong id="precio-producto">RD$65,800</strong> <del id="precio-anterior" style="color: rgba(255,255,255,0.4); font-size: 0.8rem;">RD$74,200</del> <mark id="oferta-producto">🔥 Ahorra RD$8,400</mark></p>
+        <p>Disponibilidad: <ins id="stock-producto">✅ En stock (8 unidades)</ins></p>
+        <p>Envío estimado: <time id="envio-producto" datetime="2026-07-20">20 de julio, 2026</time></p>
+
+        <form action="carrito.html" method="get" aria-label="Agregar al carrito">
+          <fieldset>
+            <legend>Opciones del producto</legend>
+            <label for="color-producto">Color:</label>
+            <select id="color-producto" name="color" aria-label="Seleccionar color">
+              <option value="plateado">Plateado</option>
+              <option value="gris">Gris Espacial</option>
+              <option value="blanco">Blanco Estrella</option>
+              <option value="medianoche">Medianoche</option>
+            </select>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="10" aria-label="Cantidad">
+          </fieldset>
+          <button type="button" id="btn-agregar-carrito" aria-label="Agregar al carrito">🛒 Agregar al carrito</button>
+          <button type="button" aria-label="Agregar a favoritos">♥ Favoritos</button>
+        </form>
+
+        <ul aria-label="Beneficios de compra">
+          <li id="beneficio1">✅ Garantía de hasta 12 meses</li>
+          <li id="beneficio2">🔄 Devolución gratuita en 30 días</li>
+          <li id="beneficio3">🚚 Envío gratis a todo el país</li>
+          <li id="beneficio4">💳 Hasta 12 cuotas sin interés</li>
+        </ul>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- VIDEO DEL PRODUCTO                                        -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-video">
+        <h2 id="titulo-video">Video del producto</h2>
+        <figure>
+          <video
+            controls
+            width="600"
+            height="338"
+            id="video-producto"
+            poster="img/productos/macbook-air.jpg"
+            aria-label="Video de presentación del producto"
+            preload="metadata"
+          >
+            <source id="video-mp4" src="video/macbook-air-m2.mp4" type="video/mp4">
+            <source id="video-webm" src="video/macbook-air-m2.webm" type="video/webm">
+            <p>Tu navegador no soporta video HTML5. <a id="video-descarga" href="video/macbook-air-m2.mp4">Descargar video</a>.</p>
+          </video>
+          <figcaption id="video-caption">Video de presentación de la Piedra filosofal</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- AUDIO PROMOCIONAL                                         -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-audio">
+        <h2 id="titulo-audio">Audio promocional</h2>
+        <figure>
+          <audio controls id="audio-producto" aria-label="Audio promocional" preload="metadata">
+            <source id="audio-mp3" src="audio/promo-piedrafilosofal.mp3" type="audio/mpeg">
+            <source id="audio-ogg" src="audio/promo-piedrafilosofal.ogg" type="audio/ogg">
+            <p>Tu navegador no soporta audio HTML5. <a id="audio-descarga" href="audio/promo-piedrafilosofal.mp3">Descargar audio</a>.</p>
+          </audio>
+          <figcaption id="audio-caption">Audio promocional de la Piedra filosofal</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- DESCRIPCIÓN                                               -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-descripcion">
+        <h2 id="titulo-descripcion">Descripción del producto</h2>
+        <p id="descripcion-producto">La <strong>Piedra filosofal</strong> cambia por completo el panorama tecnologico. Con hasta <mark>18 horas de batería</mark>, su potencia, elegancia y comodida le permite a cualquier alquimista satisfacer sus necesidades, sea estudiante, docente o profesional.</p>
+        <blockquote id="blockquote-producto" cite="https://www.apple.com/macbook-air">
+          <p id="blockquote-texto">La Piedra filosofal es el salto más grande en la historia de la tecnologia.</p>
+          <footer>— <cite id="blockquote-cita">Apple Inc., 2022</cite></footer>
+        </blockquote>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- TABLA ESPECIFICACIONES                                    -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-specs">
+        <h2 id="titulo-specs">Especificaciones técnicas</h2>
+        <table id="tabla-especificaciones">
+          <caption id="tabla-caption">Especificaciones técnicas — Piedra filosofal</caption>
+          <colgroup>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Característica</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-body">
+            <tr><th scope="row">Procesador</th><td>Intel i5 11va generación</td></tr>
+            <tr><th scope="row">RAM</th><td>8 GB Memoria unificada</td></tr>
+            <tr><th scope="row">SSD</th><td>256 GB</td></tr>
+            <tr><th scope="row">Pantalla</th><td>13.6" Liquid Retina, 2560×1664</td></tr>
+            <tr><th scope="row">Batería</th><td>Hasta 18 horas de uso</td></tr>
+            <tr><th scope="row">Conectividad</th><td>Wi-Fi 6, Bluetooth 5.3, 2× USB-C</td></tr>
+            <tr><th scope="row">Peso</th><td>1.64 kg</td></tr>
+            <tr><th scope="row">Garantía</th><td>12 meses garantía</td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2" id="tabla-nota">
+                <small>* Especificaciones sujetas a cambios.</small>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- ⭐ RESEÑAS — FUERA DEL HEADER                             -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-resenas" id="resenas">
+        <h2 id="titulo-resenas">Reseñas de clientes</h2>
+        <p id="promedio-resenas">Calificación promedio: <strong>4.8 / 5</strong> — basada en <strong id="total-resenas">312</strong> reseñas</p>
+        <div id="contenedor-resenas">
+          <article>
+            <header>
+              <h3>Fernando Tatis</h3>
+              <p>⭐⭐⭐⭐⭐ — <time datetime="2026-04-12">12 de abril, 2026</time></p>
+            </header>
+            <p>No hay mejor producto que este, libre de inconvenientes.</p>
+          </article>
+          <article>
+            <header>
+              <h3>Lebron James</h3>
+              <p>⭐⭐⭐⭐☆ — <time datetime="2026-05-05">5 de mayo, 2026</time></p>
+            </header>
+            <p>Buen rendimiento, ideal para simular el como el plomo se convierte en oro.</p>
+          </article>
+          <article>
+            <header>
+              <h3>Lisa Liu</h3>
+              <p>⭐⭐⭐⭐⭐ — <time datetime="2026-06-01">1 de junio, 2026</time></p>
+            </header>
+            <p>En miv vida vuelvo a tocar una Mac, no hay punto de comparación.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========================================================== -->
+      <!-- PRODUCTOS RELACIONADOS                                    -->
+      <!-- ========================================================== -->
+      <section aria-labelledby="titulo-relacionados">
+        <h2 id="titulo-relacionados">Productos relacionados</h2>
+        <ul id="lista-relacionados">
+          <li>
+            <article>
+              <figure>
+                <img src="img/productos/macbook-pro.jpg" alt="Piedra filosofal" width="130" height="130" loading="lazy">
+              </figure>
+              <h3><a href="producto.html?id=10">Piedra filosofal</a></h3>
+              <p><strong>RD$99,999</strong></p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <figure>
+                <img src="img/productos/lenovo-ideapad.jpg" alt="Lenovo IdeaPad" width="130" height="130" loading="lazy">
+              </figure>
+              <h3><a href="producto.html?id=11">Lenovo IdeaPad</a></h3>
+              <p><strong>RD$22,200</strong></p>
+            </article>
+          </li>
+          <li>
+            <article>
+              <figure>
+                <img src="img/productos/usb-hub.jpg" alt="USB Hub" width="130" height="130" loading="lazy">
+              </figure>
+              <h3><a href="producto.html?id=12">USB Hub</a></h3>
+              <p><strong>RD$17,700</strong></p>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <address>
+      <strong>Bucaneer</strong> |
+      <a href="tel:+18095551234">809-555-1234</a> |
+      <a href="mailto:contacto@corp.com">contacto@corp.com</a>
+    </address>
+    <p><small>&copy; 2025 Bucaneer. Todos los derechos reservados.</small></p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/productos.js"></script>
+</body>
+</html>
