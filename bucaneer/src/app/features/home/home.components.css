@@ -1,0 +1,335 @@
+/* BANNER PRINCIPAL */
+.banner-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 50%, var(--color-acento) 100%);
+  color: #fff;
+  padding: 0.5rem 2rem;
+  margin: 0 calc(-50vw + 50%);
+  width: 100vw;
+  min-height: 90px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.banner-principal article {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+.banner-principal article figure {
+  flex-shrink: 0;
+  width: clamp(70px, 10vw, 120px);
+  height: clamp(70px, 10vw, 120px);
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-principal article figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+.banner-contenido {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 2px;
+}
+.banner-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.banner-principal mark {
+  background: var(--color-error);
+  color: #fff;
+  padding: 2px 14px;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.banner-principal h1 {
+  color: #fff;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  margin: 0;
+  font-weight: 700;
+}
+.banner-subtitulo {
+  color: rgba(255,255,255,0.75);
+  font-size: clamp(0.7rem, 0.85vw, 0.9rem);
+  margin: 0;
+}
+.banner-precio-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.banner-precio-acciones p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+.banner-precio-acciones strong {
+  color: #fff;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+}
+.banner-precio-acciones del {
+  color: rgba(255,255,255,0.4);
+  font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+}
+.btn-comprar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 2rem;
+  background: linear-gradient(135deg, var(--color-acento-hover), var(--color-acento));
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 0.85vw, 0.9rem);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+.btn-comprar:hover {
+  background: var(--color-acento-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(3,160,107,0.4);
+  border-color: rgba(255,255,255,0.3);
+}
+.beneficios {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.beneficios ul {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+.beneficios li {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.25rem 1rem;
+  backdrop-filter: blur(4px);
+  text-align: center;
+  font-size: 0.7rem;
+  min-width: 60px;
+}
+.beneficios strong {
+  display: block;
+  color: #fff;
+  font-size: 0.75rem;
+}
+.beneficios p {
+  margin: 0;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* CATEGORÍAS SIDEBAR */
+.categorias-productos-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+.categorias-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 120px;
+}
+.categorias-sidebar h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-borde);
+}
+.categorias-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.categorias-sidebar li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: var(--color-texto);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.categorias-sidebar li a:hover {
+  background: var(--color-fondo);
+  color: var(--color-secundario);
+  text-decoration: none;
+  padding-left: 1.5rem;
+}
+.categorias-sidebar li a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* PRODUCTOS DESTACADOS */
+.productos-destacados {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.productos-destacados > h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+/* GARANTÍAS */
+.garantias {
+  margin: 2rem 0;
+}
+.garantias ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.garantias li {
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .categorias-productos-wrapper {
+    flex-direction: column;
+  }
+  .categorias-sidebar {
+    width: 100%;
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .categorias-sidebar h2 {
+    width: 100%;
+    margin-bottom: 0.25rem;
+    border-bottom: none;
+    font-size: 1rem;
+  }
+  .categorias-sidebar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .categorias-sidebar li a {
+    padding: 0.25rem 1rem;
+    font-size: 0.8rem;
+    background: var(--color-fondo);
+    border-radius: 9999px;
+  }
+  .categorias-sidebar li a img {
+    width: 24px;
+    height: 24px;
+  }
+  .productos-destacados {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .banner-principal {
+    flex-direction: column;
+    padding: 0.5rem;
+    min-height: auto;
+  }
+  .banner-principal article {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  .banner-principal article figure {
+    width: 60px;
+    height: 60px;
+    order: -1;
+  }
+  .banner-principal h1 {
+    font-size: 1rem;
+    white-space: normal;
+    width: 100%;
+  }
+  .banner-subtitulo {
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  .banner-precio-acciones {
+    justify-content: center;
+  }
+  .btn-comprar {
+    width: 100%;
+    justify-content: center;
+  }
+  .beneficios {
+    display: none;
+  }
+  .categorias-sidebar ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .categorias-sidebar li a {
+    white-space: nowrap;
+    font-size: 0.75rem;
+  }
+  .productos-destacados {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .productos-destacados {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .categorias-sidebar {
+    padding: 0.5rem;
+  }
+  .categorias-sidebar li a {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.5rem;
+  }
+  .categorias-sidebar li a img {
+    width: 18px;
+    height: 18px;
+  }
+}

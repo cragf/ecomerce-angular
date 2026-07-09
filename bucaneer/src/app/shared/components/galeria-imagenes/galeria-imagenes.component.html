@@ -1,0 +1,11 @@
+<div class="galeria">
+  <figure class="principal">
+    <img [src]="imagenActual" [alt]="captionActual" width="700" height="450" loading="lazy">
+    <figcaption>{{ captionActual }}</figcaption>
+  </figure>
+  <div class="miniaturas" *ngIf="miniaturas && miniaturas.length > 0">
+    <figure *ngFor="let mini of miniaturas" (click)="cambiarImagen(mini.src, mini.alt)">
+      <img [src]="mini.src" [alt]="mini.alt" width="80" height="60" loading="lazy">
+    </figure>
+  </div>
+</div>

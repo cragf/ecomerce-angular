@@ -1,0 +1,38 @@
+<app-breadcrumb [items]="[
+  { label: 'Inicio', url: '/' },
+  { label: 'Productos' }
+]"></app-breadcrumb>
+
+<h1>Catálogo de Productos</h1>
+<p>Mostrando <strong>{{ productosFiltrados.length }}</strong> de <strong>{{ productos.length }}</strong> productos</p>
+
+<div class="productos-wrapper">
+  <aside class="filtros-sidebar">
+    <h2>Filtrar productos</h2>
+    <form (submit)="onBuscar($event)">
+      <div class="buscar-filtro">
+        <input type="search" [(ngModel)]="terminoBusqueda" name="q" placeholder="Buscar productos...">
+        <button type="submit">Buscar</button>
+      </div>
+    </form>
+    <hr>
+    <h3>Categorías</h3>
+    <ul>
+      <li><a routerLink="/productos">Todos</a></li>
+      <li><a routerLink="/productos">Laptops</a></li>
+      <li><a routerLink="/productos">Smartphones</a></li>
+      <li><a routerLink="/productos">Audio</a></li>
+      <li><a routerLink="/productos">Gaming</a></li>
+      <li><a routerLink="/productos">Accesorios</a></li>
+    </ul>
+  </aside>
+
+  <section class="productos-grid">
+    <app-producto-card
+      *ngFor="let producto of productosFiltrados"
+      [producto]="producto"
+      (agregarCarrito)="agregarAlCarrito($event)">
+    </app-producto-card>
+    <p *ngIf="productosFiltrados.length === 0" class="sin-resultados">No se encontraron productos.</p>
+  </section>
+</div>

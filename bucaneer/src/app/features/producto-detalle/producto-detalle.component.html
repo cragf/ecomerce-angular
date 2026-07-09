@@ -1,0 +1,135 @@
+<app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+
+<article *ngIf="producto; else noProducto">
+
+<header>
+    <h1>{{ producto.nombre }}</h1>
+    <p>
+    Marca: <strong>{{ producto.marca }}</strong> |
+    SKU: <data [value]="producto.sku">{{ producto.sku }}</data> |
+    Categoría: <a routerLink="/productos">{{ producto.categoria }}</a>
+    </p>
+    <p>{{ estrellas }} <a href="#resenas"><small>({{ producto.resenas }} reseñas)</small></a></p>
+</header>
+
+<!-- Galería -->
+<app-galeria-imagenes
+    [miniaturas]="producto.miniaturas"
+    [imagenPrincipal]="producto.imagen"
+    [titulo]="producto.nombre">
+</app-galeria-imagenes>
+
+<!-- Info y precio -->
+<section class="info-compra">
+    <h2>Información de compra</h2>
+    <p>
+    Precio: <strong>{{ producto.precio | formatearPrecio }}</strong>
+    <del *ngIf="producto.precio_anterior">{{ producto.precio_anterior | formatearPrecio }}</del>
+    <mark *ngIf="producto.oferta">{{ producto.oferta }}</mark>
+    </p>
+    <p>Disponibilidad:
+    <ins *ngIf="producto.stock > 0">✅ En stock ({{ producto.stock }} unidades)</ins>
+    <del *ngIf="producto.stock === 0">❌ Agotado</del>
+    </p>
+    <form>
+    <fieldset>
+        <legend>Opciones del producto</legend>
+        <label for="color">Color:</label>
+        <select id="color">
+        <option value="plateado">Plateado</option>
+        <option value="gris">Gris Espacial</option>
+        </select>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" [(ngModel)]="cantidad" name="cantidad" min="1" max="10">
+    </fieldset>
+    <button (click)="agregarAlCarrito()">🛒 Agregar al carrito</button>
+    <button>♥ Favoritos</button>
+    </form>
+    <ul class="beneficios">
+    <li *ngFor="let beneficio of producto.beneficios">{{ beneficio }}</li>
+    </ul>
+</section>
+
+<!-- Video -->
+<section *ngIf="producto.video">
+    <h2>Video del producto</h2>
+    <video controls width="700" height="394" [poster]="producto.video.poster">
+    <source [src]="producto.video.mp4" type="video/mp4">
+    <source [src]="producto.video.webm" type="video/webm">
+    </video>
+    <figcaption>{{ producto.video.caption }}</figcaption>
+</section>
+
+<!-- Audio -->
+<section *ngIf="producto.audio">
+    <h2>Audio promocional</h2>
+    <audio controls>
+    <source [src]="producto.audio.mp3" type="audio/mpeg">
+    <source [src]="producto.audio.ogg" type="audio/ogg">
+    </audio>
+    <figcaption>{{ producto.audio.caption }}</figcaption>
+</section>
+
+<!-- Descripción -->
+<section>
+    <h2>Descripción</h2>
+    <p [innerHTML]="producto.descripcion"></p>
+    <blockquote *ngIf="producto.blockquote">
+    <p>{{ producto.blockquote.texto }}</p>
+    <footer>— <cite>{{ producto.blockquote.cita }}</cite></footer>
+    </blockquote>
+</section>
+
+<!-- Especificaciones -->
+<section>
+    <h2>Especificaciones técnicas</h2>
+    <table>
+    <caption>Especificaciones — {{ producto.nombre }}</caption>
+    <thead><tr><th>Característica</th><th>Valor</th></tr></thead>
+    <tbody>
+        <tr *ngFor="let spec of producto.especificaciones">
+        <th scope="row">{{ spec.caracteristica }}</th>
+        <td>{{ spec.valor }}</td>
+        </tr>
+    </tbody>
+    </table>
+</section>
+
+<!-- Reseñas -->
+<section id="resenas">
+    <h2>Reseñas de clientes</h2>
+    <p>Calificación promedio: <strong>{{ producto.rating }} / 5</strong> — {{ producto.resenas }} reseñas</p>
+    <div *ngFor="let resena of producto.resenas_lista">
+    <article>
+        <header>
+        <h3>{{ resena.nombre }}</h3>
+        <p>{{ resena.estrellas | generarEstrellas }} — <time [datetime]="resena.fecha">{{ resena.fecha }}</time></p>
+        </header>
+        <p>{{ resena.comentario }}</p>
+    </article>
+    </div>
+</section>
+
+<!-- Relacionados -->
+<section>
+    <h2>Productos relacionados</h2>
+    <ul class="relacionados">
+    <li *ngFor="let rel of producto.relacionados">
+        <article>
+        <figure><img [src]="rel.imagen" [alt]="rel.nombre" width="130" height="130"></figure>
+        <h3><a [routerLink]="['/producto', rel.id]">{{ rel.nombre }}</a></h3>
+        <p><strong>{{ rel.precio | formatearPrecio }}</strong></p>
+        </article>
+    </li>
+    </ul>
+</section>
+
+</article>
+
+<ng-template #noProducto>
+<div class="error">
+    <h1>Producto no encontrado</h1>
+    <p>Lo sentimos, el producto que buscas no existe.</p>
+    <a routerLink="/productos">Volver al catálogo</a>
+</div>
+</ng-template>

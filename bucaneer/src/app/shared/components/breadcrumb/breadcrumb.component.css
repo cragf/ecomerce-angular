@@ -1,0 +1,28 @@
+nav {
+  margin-bottom: 1.5rem;
+}
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+  list-style: none;
+  font-size: 0.875rem;
+}
+ol li + li::before {
+  content: '›';
+  margin-right: 0.25rem;
+  color: var(--color-texto-suave);
+}
+ol li a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+ol li a:hover {
+  color: var(--color-acento-hover);
+  text-decoration: underline;
+}
+ol li:last-child {
+  color: var(--color-texto);
+  font-weight: 600;
+}

@@ -1,0 +1,8 @@
+<nav aria-label="Ruta de navegación">
+  <ol>
+    <li *ngFor="let item of items; let last = last">
+      <a *ngIf="!last && item.url" [routerLink]="item.url">{{ item.label }}</a>
+      <span *ngIf="last || !item.url">{{ item.label }}</span>
+    </li>
+  </ol>
+</nav>

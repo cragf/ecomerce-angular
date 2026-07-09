@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   ESTILOS GLOBALES — Bucaneer Angular
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-primario: #032b1f;
+  --color-secundario: #066847;
+  --color-acento: #016453;
+  --color-acento-hover: #03a06b;
+  --color-fondo: #11151a;
+  --color-fondo-card: #13111a;
+  --color-fondo-alt: #16111a;
+  --color-texto: #E5E5E5;
+  --color-texto-suave: #9CA3AF;
+  --color-borde: #333333;
+  --color-exito: #4ADE80;
+  --color-error: #F87171;
+  --fuente-principal: 'Noto Sans', sans-serif;
+  --fuente-titulo: 'Libre Franklin', sans-serif;
+  --sombra-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --sombra-lg: 0 10px 15px rgba(0,0,0,0.10), 0 4px 6px rgba(0,0,0,0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-acento-hover);
+  text-decoration: underline;
+}
+ul, ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--color-borde);
+  margin: 2rem 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-family: var(--fuente-principal);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background-color: var(--color-secundario);
+  color: #fff;
+  border-color: var(--color-secundario);
+}
+button:hover {
+  background-color: var(--color-primario);
+  border-color: var(--color-primario);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(6,104,71,0.35);
+}
+button:disabled {
+  background-color: var(--color-borde);
+  color: var(--color-texto-suave);
+  border-color: var(--color-borde);
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none !important;
+  box-shadow: none !important;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  font-family: var(--fuente-principal);
+}

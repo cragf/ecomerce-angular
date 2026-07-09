@@ -1,0 +1,58 @@
+<app-breadcrumb [items]="[
+  { label: 'Inicio', url: '/' },
+  { label: 'Carrito' }
+]"></app-breadcrumb>
+
+<h1>Carrito de Compras</h1>
+
+<section class="progreso">
+  <h2>Progreso del pedido</h2>
+  <ol>
+    <li><strong>1. Carrito</strong> ← Estás aquí</li>
+    <li>2. Datos de envío</li>
+    <li>3. Pago</li>
+    <li>4. Confirmación</li>
+  </ol>
+  <progress value="1" max="4"></progress>
+  <p><small>Paso 1 de 4 — Revisa tu carrito</small></p>
+</section>
+
+<hr>
+
+<section class="tabla-carrito">
+  <h2>Mis productos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="items.length === 0">
+        <td colspan="5" class="vacio">Tu carrito está vacío</td>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td><strong>{{ item.nombre }}</strong></td>
+        <td>{{ item.precio | formatearPrecio }}</td>
+        <td>{{ item.cantidad }}</td>
+        <td>{{ item.precio * item.cantidad | formatearPrecio }}</td>
+        <td><button (click)="eliminar(item.id)">🗑 Eliminar</button></td>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="items.length > 0">
+      <tr>
+        <td colspan="3"><strong>Total</strong></td>
+        <td colspan="2"><strong>{{ total | formatearPrecio }}</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+
+<div class="acciones-carrito" *ngIf="items.length > 0">
+  <button (click)="vaciar()">🗑 Vaciar carrito</button>
+  <button (click)="procederPago()">✅ Proceder al pago</button>
+</div>

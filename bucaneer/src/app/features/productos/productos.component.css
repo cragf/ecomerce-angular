@@ -1,0 +1,116 @@
+.productos-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.filtros-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: sticky;
+  top: 120px;
+}
+.filtros-sidebar h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  margin-bottom: 1rem;
+}
+.filtros-sidebar h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: 0.5rem;
+}
+.filtros-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.filtros-sidebar li a {
+  display: block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--color-texto);
+  font-size: 0.875rem;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+.filtros-sidebar li a:hover {
+  background: var(--color-fondo);
+  color: var(--color-secundario);
+  text-decoration: none;
+}
+.buscar-filtro {
+  display: flex;
+  gap: 0.5rem;
+}
+.buscar-filtro input {
+  flex: 1;
+  padding: 0.35rem 0.75rem;
+  border: 2px solid var(--color-borde);
+  border-radius: 8px;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.buscar-filtro input:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 0 3px rgba(6,104,71,0.15);
+}
+.buscar-filtro button {
+  padding: 0.35rem 1rem;
+  background: var(--color-secundario);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+.buscar-filtro button:hover {
+  background: var(--color-primario);
+}
+.productos-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-texto-suave);
+  font-size: 1.125rem;
+}
+@media (max-width: 1024px) {
+  .productos-wrapper {
+    flex-direction: column;
+  }
+  .filtros-sidebar {
+    width: 100%;
+    position: static;
+  }
+  .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}

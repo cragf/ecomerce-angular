@@ -1,0 +1,22 @@
+<article class="producto-card">
+  <header>
+    <figure>
+      <img [src]="producto.imagen" [alt]="producto.nombre" width="200" height="200" loading="lazy">
+    </figure>
+    <h3>{{ producto.nombre }}</h3>
+  </header>
+  <p>{{ producto.descripcion | slice:0:50 }}...</p>
+  <div class="producto-precio">
+    <strong>{{ producto.precio | formatearPrecio }}</strong>
+    <mark *ngIf="producto.oferta">{{ producto.oferta }}</mark>
+  </div>
+  <div class="producto-rating">{{ estrellas }} <small>({{ producto.resenas }})</small></div>
+  <div class="producto-stock">
+    <ins *ngIf="producto.stock > 0">✅ En stock</ins>
+    <del *ngIf="producto.stock === 0">❌ Agotado</del>
+  </div>
+  <footer>
+    <a [routerLink]="['/producto', producto.id]">Ver detalle</a>
+    <button (click)="onAgregarCarrito()" [disabled]="producto.stock === 0">🛒 Agregar</button>
+  </footer>
+</article>

@@ -1,0 +1,65 @@
+<!-- BANNER PRINCIPAL -->
+<section class="banner-principal">
+  <article>
+    <figure>
+      <img src="assets/img/banner/auriculares-banner.png" alt="Auriculares SoundPro X1" loading="lazy">
+    </figure>
+    <div class="banner-contenido">
+      <div class="banner-header">
+        <mark>🔥 OFERTA</mark>
+        <h1>Auriculares SoundPro X1</h1>
+      </div>
+      <p class="banner-subtitulo">Cancelación de ruido · 30h de batería</p>
+      <div class="banner-precio-acciones">
+        <p><strong>RD$11,800</strong> <del>RD$14,800</del></p>
+        <a routerLink="/producto/1" class="btn-comprar">Comprar ahora →</a>
+      </div>
+    </div>
+  </article>
+  <aside class="beneficios">
+    <ul>
+      <li><strong>🚚 Envío gratis</strong><p>Todo el país</p></li>
+      <li><strong>🔒 Pago seguro</strong><p>Tarjetas</p></li>
+      <li><strong>⭐ Garantía</strong><p>12 meses</p></li>
+    </ul>
+  </aside>
+</section>
+
+<hr>
+
+<!-- CATEGORÍAS + PRODUCTOS -->
+<div class="categorias-productos-wrapper">
+  <aside class="categorias-sidebar">
+    <h2>Categorías</h2>
+    <nav>
+      <ul>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/celulares.jpg" alt="Celulares" width="40" height="40"> Celulares</a></li>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/computadores.jpg" alt="Computadores" width="40" height="40"> Computadores</a></li>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/audio.jpg" alt="Audio" width="40" height="40"> Audio</a></li>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/accesorios.jpg" alt="Accesorios" width="40" height="40"> Accesorios</a></li>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/gaming.jpg" alt="Gaming" width="40" height="40"> Gaming</a></li>
+        <li><a routerLink="/productos"><img src="assets/img/categorias/hogar.jpg" alt="Hogar" width="40" height="40"> Hogar</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="productos-destacados">
+    <h2>Productos destacados</h2>
+    <app-producto-card
+      *ngFor="let producto of productos"
+      [producto]="producto"
+      (agregarCarrito)="agregarAlCarrito($event)">
+    </app-producto-card>
+  </section>
+</div>
+
+<!-- GARANTÍAS -->
+<section class="garantias">
+  <h2>¿Por qué elegirnos?</h2>
+  <ul>
+    <li>🔒 <strong>Compra protegida</strong> — Tus datos siempre seguros</li>
+    <li>🔄 <strong>Devoluciones fáciles</strong> — Hasta 30 días</li>
+    <li>⭐ <strong>Ofertas exclusivas</strong> — Descuentos y promociones</li>
+    <li>🎁 <strong>Programa de puntos</strong> — Acumula y canjea</li>
+  </ul>
+</section>
