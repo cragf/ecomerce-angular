@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
@@ -7,6 +8,7 @@ import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcru
   selector: 'app-contacto',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     RouterLink,
     BreadcrumbComponent

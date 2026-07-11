@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
 import { FormatearPrecioPipe } from '../../shared/pipes/formatear-precio-pipe';
 import { CarritoService } from '../../core/services/carrito';
@@ -8,6 +9,7 @@ import { ItemCarrito } from '../../shared/models/producto.model';
   selector: 'app-carrito',
   standalone: true,
   imports: [
+    CommonModule,
     BreadcrumbComponent,
     FormatearPrecioPipe
   ],

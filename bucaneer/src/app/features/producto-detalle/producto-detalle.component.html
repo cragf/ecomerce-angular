@@ -14,9 +14,9 @@
 
 <!-- Galería -->
 <app-galeria-imagenes
-    [miniaturas]="producto.miniaturas"
-    [imagenPrincipal]="producto.imagen"
-    [titulo]="producto.nombre">
+    [miniaturas]="producto.miniaturas || []"
+    [imagenPrincipal]="producto.imagen ||''"
+    [titulo]="producto.nombre ||''">
 </app-galeria-imagenes>
 
 <!-- Info y precio -->
@@ -75,8 +75,8 @@
     <h2>Descripción</h2>
     <p [innerHTML]="producto.descripcion"></p>
     <blockquote *ngIf="producto.blockquote">
-    <p>{{ producto.blockquote.texto }}</p>
-    <footer>— <cite>{{ producto.blockquote.cita }}</cite></footer>
+    <p>{{ producto.blockquote?.texto }}</p>
+    <footer>— <cite>{{ producto.blockquote?.cita }}</cite></footer>
     </blockquote>
 </section>
 
@@ -103,7 +103,7 @@
     <article>
         <header>
         <h3>{{ resena.nombre }}</h3>
-        <p>{{ resena.estrellas | generarEstrellas }} — <time [datetime]="resena.fecha">{{ resena.fecha }}</time></p>
+        <p>{{ resena.estrellas | generarEstrellas }} — <time [attr.datetime]="resena.fecha">{{ resena.fecha }}</time></p>
         </header>
         <p>{{ resena.comentario }}</p>
     </article>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { TopbarComponent } from './core/components/topbar/topbar';
 import { HeaderComponent } from './core/components/header/header';
@@ -8,6 +9,7 @@ import { FooterComponent } from './core/components/footer/footer';
   selector: 'app-root',
   standalone: true,
   imports: [
+    CommonModule,
     RouterOutlet,
     TopbarComponent,
     HeaderComponent,

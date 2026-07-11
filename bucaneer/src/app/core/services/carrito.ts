@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID  } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Producto, ItemCarrito } from '../../shared/models/producto.model';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CarritoService {
   public carrito$ = this.carritoSubject.asObservable();
   public contadorItems$ = this.contadorSubject.asObservable();
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.cargarDesdeLocalStorage();
   }
 
@@ -46,17 +47,21 @@ export class CarritoService {
   }
 
   private guardar(): void {
-    localStorage.setItem('carrito', JSON.stringify(this.items));
-    this.carritoSubject.next([...this.items]);
-    this.contadorSubject.next(this.contarItems());
+    if (isPlatformBrowser(this.platformId)) {
+        localStorage.setItem('carrito', JSON.stringify(this.items));
+        this.carritoSubject.next([...this.items]);
+        this.contadorSubject.next(this.contarItems());
+    }
   }
 
   private cargarDesdeLocalStorage(): void {
-    const data = localStorage.getItem('carrito');
-    if (data) {
-      this.items = JSON.parse(data);
-      this.carritoSubject.next([...this.items]);
-      this.contadorSubject.next(this.contarItems());
+    if (isPlatformBrowser(this.platformId)) {
+      const data = localStorage.getItem('carrito');
+      if (data) {
+        this.items = JSON.parse(data);
+        this.carritoSubject.next([...this.items]);
+        this.contadorSubject.next(this.contarItems());
+      }
     }
   }
-}   
+} 

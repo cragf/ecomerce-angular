@@ -17,6 +17,7 @@ export interface Producto {
   beneficios?: string[];
   video?: { mp4: string; webm: string; poster: string; caption: string };
   audio?: { mp3: string; ogg: string; caption: string };
+  blockquote?: { texto: string; cita: string; cite?: string };
   resenas_lista?: { nombre: string; estrellas: number; fecha: string; comentario: string }[];
   relacionados?: { id: number; nombre: string; precio: number; imagen: string }[];
 }

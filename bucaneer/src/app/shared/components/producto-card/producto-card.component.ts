@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormatearPrecioPipe } from '../../pipes/formatear-precio-pipe';
 import { Producto } from '../../models/producto.model';
@@ -7,6 +8,7 @@ import { Producto } from '../../models/producto.model';
   selector: 'app-producto-card',
   standalone: true,
   imports: [
+    CommonModule,
     RouterLink,
     FormatearPrecioPipe
   ],
