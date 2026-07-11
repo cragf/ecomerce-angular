@@ -1,0 +1,75 @@
+<app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+
+<h1>Contáctanos</h1>
+<p>Nuestro equipo está disponible <strong>24/7</strong> para ayudarte. Completa el formulario y te responderemos en menos de 24 horas.</p>
+
+<div class="contacto-wrapper">
+
+  <!-- Formulario -->
+  <section class="formulario">
+    <h2>Formulario de contacto</h2>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <div>
+          <label for="nombre">Nombre completo: <abbr title="Obligatorio">*</abbr></label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="formData.nombre" required minlength="3" #nombre="ngModel">
+          <small *ngIf="nombre.invalid && nombre.touched">El nombre debe tener al menos 3 caracteres.</small>
+        </div>
+
+        <div>
+          <label for="email">Correo electrónico: <abbr title="Obligatorio">*</abbr></label>
+          <input type="email" id="email" name="email" [(ngModel)]="formData.email" required email #email="ngModel">
+          <small *ngIf="email.invalid && email.touched">Ingresa un correo válido.</small>
+        </div>
+
+        <div>
+          <label for="telefono">Teléfono: <abbr title="Obligatorio">*</abbr></label>
+          <input type="tel" id="telefono" name="telefono" [(ngModel)]="formData.telefono" required pattern="[\+]?[0-9\s\-]{8,15}" #telefono="ngModel">
+          <small *ngIf="telefono.invalid && telefono.touched">Formato: +809 000 0000</small>
+        </div>
+
+        <div>
+          <label for="mensaje">Mensaje: <abbr title="Obligatorio">*</abbr></label>
+          <textarea id="mensaje" name="mensaje" [(ngModel)]="formData.mensaje" required minlength="20" rows="6" #mensaje="ngModel"></textarea>
+          <small *ngIf="mensaje.invalid && mensaje.touched">El mensaje debe tener al menos 20 caracteres.</small>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" name="terminos" [(ngModel)]="formData.terminos" required>
+            Acepto los <a routerLink="/404">términos y condiciones</a>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="botones-form">
+        <button type="submit" [disabled]="contactForm.invalid">📨 Enviar mensaje</button>
+        <button type="reset">🗑 Limpiar</button>
+      </div>
+
+      <div *ngIf="mensajeEnviado" class="exito">✅ ¡Mensaje enviado correctamente!</div>
+      <div *ngIf="errorMensaje" class="error-form">{{ errorMensaje }}</div>
+
+    </form>
+  </section>
+
+  <!-- Info de contacto -->
+  <aside class="info-contacto">
+    <h2>Información de contacto</h2>
+    <address>
+      <p><strong>Bucaneer</strong><br>Av. Tecnología 1234, Piso 5<br>Santo Domingo, República Dominicana</p>
+      <p>📞 <a href="tel:+18095551234">809-555-1234</a><br>✉ <a href="mailto:contacto@corp.com">contacto@corp.com</a></p>
+    </address>
+    <section>
+      <h3>Horarios</h3>
+      <dl>
+        <dt>Lunes a Viernes:</dt><dd>9:00 – 18:00</dd>
+        <dt>Sábados:</dt><dd>10:00 – 14:00</dd>
+        <dt>Chat en línea:</dt><dd>24/7</dd>
+      </dl>
+    </section>
+  </aside>
+</div>

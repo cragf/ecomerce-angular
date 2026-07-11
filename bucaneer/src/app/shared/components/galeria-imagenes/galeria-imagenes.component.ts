@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-galeria-imagenes',
+  standalone: true,
+  imports: [],
   templateUrl: './galeria-imagenes.component.html',
   styleUrls: ['./galeria-imagenes.component.css']
 })

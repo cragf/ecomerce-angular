@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { CarritoService } from '../../core/services/carrito.service';
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
+import { FormatearPrecioPipe } from '../../shared/pipes/formatear-precio-pipe';
+import { CarritoService } from '../../core/services/carrito';
 import { ItemCarrito } from '../../shared/models/producto.model';
 
 @Component({
   selector: 'app-carrito',
+  standalone: true,
+  imports: [
+    BreadcrumbComponent,
+    FormatearPrecioPipe
+  ],
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
@@ -22,11 +29,19 @@ export class CarritoComponent implements OnInit {
     });
   }
 
+  formatearPrecio(valor: number): string {
+    return 'RD$' + valor.toLocaleString('es-DO');
+  }
+
   eliminar(id: number): void {
     this.carritoService.eliminar(id);
   }
 
   vaciar(): void {
+    if (this.items.length === 0) {
+      alert('El carrito ya está vacío');
+      return;
+    }
     if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
       this.carritoService.vaciar();
     }
@@ -38,7 +53,8 @@ export class CarritoComponent implements OnInit {
       return;
     }
     const orden = 'ORD-' + Math.floor(Math.random() * 9000 + 1000);
-    alert(`✅ ¡Compra realizada exitosamente!\n📦 Número de orden: ${orden}\n💰 Total: ${this.total | formatearPrecio}`);
+    const totalFormateado = this.formatearPrecio(this.total);
+    alert(`✅ ¡Compra realizada exitosamente!\n\n📦 Número de orden: ${orden}\n💰 Total: ${totalFormateado}`);
     this.carritoService.vaciar();
   }
 }

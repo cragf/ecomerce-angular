@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-export class Header {}
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';  // ← Para routerLink
+import { FormsModule } from '@angular/forms';  // ← Para ngModel
+import { AsyncPipe } from '@angular/common';  // ← Para async pipe
 import { Observable } from 'rxjs';
-import { CarritoService } from '../../services/carrito.service';
+import { CarritoService } from '../../services/carrito';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [
+    FormsModule,
+    RouterLink,
+    RouterLinkActive,
+    AsyncPipe  // ← Para el pipe async
+  ],
   templateUrl: './header.html',
-  styleUrl: './header.css',
+  styleUrls: ['./header.css']
 })
-
 export class HeaderComponent implements OnInit {
   contadorCarrito$!: Observable<number>;
   terminoBusqueda = '';

@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcrumb.component';
+import { ProductoCardComponent } from '../../shared/components/producto-card/producto-card.component';
 import { ProductosService } from '../../core/services/productos.service';
-import { CarritoService } from '../../core/services/carrito.service';
+import { CarritoService } from '../../core/services/carrito';
 import { Producto } from '../../shared/models/producto.model';
 
 @Component({
   selector: 'app-productos',
+  standalone: true,
+  imports: [
+    FormsModule,
+    RouterLink,
+    BreadcrumbComponent,
+    ProductoCardComponent
+  ],
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
@@ -16,8 +26,7 @@ export class ProductosComponent implements OnInit {
 
   constructor(
     private productosService: ProductosService,
-    private carritoService: CarritoService,
-    private route: ActivatedRoute
+    private carritoService: CarritoService
   ) {}
 
   ngOnInit(): void {
@@ -25,16 +34,6 @@ export class ProductosComponent implements OnInit {
       next: (data) => {
         this.productos = data;
         this.productosFiltrados = data;
-        this.aplicarFiltroDesdeURL();
-      }
-    });
-  }
-
-  aplicarFiltroDesdeURL(): void {
-    this.route.queryParams.subscribe(params => {
-      this.terminoBusqueda = params['q'] || '';
-      if (this.terminoBusqueda) {
-        this.filtrarProductos();
       }
     });
   }

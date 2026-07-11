@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { ProductoCardComponent } from '../../shared/components/producto-card/producto-card.component';
 import { ProductosService } from '../../core/services/productos.service';
-import { CarritoService } from '../../core/services/carrito.service';
+import { CarritoService } from '../../core/services/carrito';
 import { Producto } from '../../shared/models/producto.model';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [
+    RouterLink,
+    ProductoCardComponent
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

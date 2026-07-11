@@ -1,8 +1,15 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { FormatearPrecioPipe } from '../../pipes/formatear-precio-pipe';
 import { Producto } from '../../models/producto.model';
 
 @Component({
   selector: 'app-producto-card',
+  standalone: true,
+  imports: [
+    RouterLink,
+    FormatearPrecioPipe
+  ],
   templateUrl: './producto-card.component.html',
   styleUrls: ['./producto-card.component.css']
 })

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrls: ['./footer.css']
 })
 export class FooterComponent {
   emailNewsletter = '';
