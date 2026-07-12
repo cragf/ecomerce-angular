@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   gap: 2rem;
   background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 50%, var(--color-acento) 100%);
   color: #fff;
@@ -332,4 +333,21 @@
     width: 18px;
     height: 18px;
   }
+}
+/* Línea decorativa debajo del banner */
+.banner-principal::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--color-acento-hover);
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+.banner-principal:hover::after {
+    opacity: 1;
 }

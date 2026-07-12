@@ -4,14 +4,16 @@ import { Observable } from 'rxjs';
 import { Producto } from '../../shared/models/producto.model';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApiService {
-  private dataUrl = 'assets/data/productos.json';
+  // ✅ Ruta CORRECTA para Angular
+    private dataUrl = 'assets/data/productos.json';
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  obtenerProductos(): Observable<Producto[]> {
-    return this.http.get<Producto[]>(this.dataUrl);
-  }
+    obtenerProductos(): Observable<Producto[]> {
+        console.log('Cargando productos desde:', this.dataUrl);
+        return this.http.get<Producto[]>(this.dataUrl);
+    }
 }

@@ -15,12 +15,18 @@ export class ProductosService {
     this.cargarProductos();
   }
 
-  cargarProductos(): void {
-    this.api.obtenerProductos().subscribe({
-      next: (data) => this.productosSubject.next(data),
-      error: () => console.error('Error cargando productos')
-    });
-  }
+    cargarProductos(): void {
+        console.log('Intentando cargar productos...');
+        this.api.obtenerProductos().subscribe({
+            next: (data) => {
+            console.log('Productos cargados:', data);
+            this.productosSubject.next(data);
+            },
+            error: (err) => {
+            console.error('Error cargando productos:', err);
+            }
+        });
+    }
 
   obtenerProductos(): Observable<Producto[]> {
     return this.productos$;
