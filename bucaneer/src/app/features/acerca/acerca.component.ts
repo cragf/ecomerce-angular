@@ -12,6 +12,6 @@ import { BreadcrumbComponent } from '../../shared/components/breadcrumb/breadcru
 export class AcercaComponent {
   breadcrumbItems = [
     { label: 'Inicio', url: '/' },
-    { label: 'Acerca de' }
+    { label: 'Blog y noticias' }
   ];
 }

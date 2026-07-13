@@ -1,44 +1,106 @@
 <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
 
-<h1>Acerca de Bucaneer</h1>
+<h1>Blog y Noticias</h1>
+<p class="subtitulo-blog">Lo último en tecnología, novedades y eventos de Bucaneer.</p>
 
-<section>
-<h2>¿Quiénes somos?</h2>
-<article>
-    <h3>Nuestra historia</h3>
-    <p>Fundada en <time datetime="2025">2025</time> en Santo Domingo, República Dominicana.</p>
-    <p><strong>Bucaneer</strong> es una pequeña empresa dominicana dedicada a vender tecnología de calidad a precios accesibles.</p>
-    <blockquote>
-    <p>La tecnología no debería ser un lujo. En Bucaneer, nos aseguramos de que no lo sea.</p>
-    <footer>— <cite>Gaggleman, Fundador</cite></footer>
-    </blockquote>
-</article>
+<!-- ========================== -->
+<!-- LISTA DE NOTICIAS         -->
+<!-- ========================== -->
+<section class="blog-grid">
+
+  <!-- Noticia 1 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/lanzamiento.jpg" alt="Nuevo producto" loading="lazy">
+      <span class="noticia-categoria">Lanzamiento</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>Llega la Piedra Filosofal 2.0</h3>
+      <p class="noticia-fecha">📅 12 de julio, 2026</p>
+      <p>La nueva versión de la Piedra Filosofal llega con mejoras en rendimiento, batería y diseño. Un 30% más rápida que su predecesora.</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
+  <!-- Noticia 2 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/ofertas.jpg" alt="Ofertas de verano" loading="lazy">
+      <span class="noticia-categoria">Ofertas</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>Ofertas de verano 2026</h3>
+      <p class="noticia-fecha">📅 10 de julio, 2026</p>
+      <p>Aprovecha descuentos de hasta el 40% en laptops, audífonos y accesorios durante todo el mes de julio. ¡No te lo pierdas!</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
+  <!-- Noticia 3 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/evento.jpg" alt="Evento tecnológico" loading="lazy">
+      <span class="noticia-categoria">Eventos</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>Bucaneer en la feria Tech RD 2026</h3>
+      <p class="noticia-fecha">📅 5 de julio, 2026</p>
+      <p>Estaremos presentes en la feria de tecnología más importante del país. Ven a conocernos y probar nuestros productos en vivo.</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
+  <!-- Noticia 4 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/garantia.jpg" alt="Garantía extendida" loading="lazy">
+      <span class="noticia-categoria">Novedades</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>Garantía extendida a 24 meses</h3>
+      <p class="noticia-fecha">📅 28 de junio, 2026</p>
+      <p>Ahora todos nuestros productos cuentan con 2 años de garantía. Compra con total tranquilidad y confianza.</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
+  <!-- Noticia 5 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/entrevista.jpg" alt="Entrevista" loading="lazy">
+      <span class="noticia-categoria">Entrevistas</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>Entrevista: "La tecnología no debería ser un lujo"</h3>
+      <p class="noticia-fecha">📅 20 de junio, 2026</p>
+      <p>Hablamos con el fundador de Bucaneer sobre el futuro de la tecnología accesible en la República Dominicana.</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
+  <!-- Noticia 6 -->
+  <article class="noticia-card">
+    <div class="noticia-imagen">
+      <img src="assets/img/blog/innovacion.jpg" alt="Innovación" loading="lazy">
+      <span class="noticia-categoria">Innovación</span>
+    </div>
+    <div class="noticia-contenido">
+      <h3>El futuro de la IA en el comercio local</h3>
+      <p class="noticia-fecha">📅 15 de junio, 2026</p>
+      <p>Cómo la inteligencia artificial está cambiando la forma en que compramos y vendemos tecnología en el país.</p>
+      <a href="#" class="leer-mas">Leer más →</a>
+    </div>
+  </article>
+
 </section>
 
+<!-- ========================== -->
+<!-- SECCIÓN ACERCA DE         -->
+<!-- ========================== -->
 <hr>
 
-<section>
-<h2>Misión y valores</h2>
-<article><h3>Misión</h3><p>Vender tecnología a precios accesibles con honestidad y buen servicio.</p></article>
-<article><h3>Visión</h3><p>Convertirnos en la tienda de tecnología de referencia en la RD.</p></article>
-<article>
-    <h3>Nuestros valores</h3>
-    <dl>
-    <dt>Accesibilidad</dt><dd>Precios justos para todos.</dd>
-    <dt>Honestidad</dt><dd>Sin letra pequeña ni sorpresas.</dd>
-    <dt>Calidad</dt><dd>Solo productos originales.</dd>
-    <dt>Servicio</dt><dd>Te atendemos como persona.</dd>
-    </dl>
-</article>
-</section>
-
-<hr>
-
-<section>
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Qué es Bucaneer?</summary><p>Una tienda de ecommerce dominicana con productos tecnológicos originales.</p></details>
-<details><summary>¿En qué moneda están los precios?</summary><p>Todos los precios están en <strong>RD$</strong> (pesos dominicanos).</p></details>
-<details><summary>¿Los productos son originales?</summary><p>Sí, <strong>100% originales</strong> de distribuidores autorizados.</p></details>
-<details><summary>¿Tienen entrega a domicilio?</summary><p>Sí, hacemos entregas en Santo Domingo y envíos a nivel nacional.</p></details>
-<details><summary>¿Cómo puedo hacer un pedido?</summary><p>Agrega productos al carrito desde el sitio web o contáctanos directamente.</p></details>
+<section class="acerca-section">
+  <h2>Acerca de Bucaneer</h2>
+  <p><strong>Bucaneer</strong> es una tienda de tecnología dominicana fundada en 2025. Creemos que la tecnología debe ser accesible para todos, sin importar el presupuesto.</p>
+  <p>Trabajamos con marcas como Apple, Samsung, Lenovo, Sony y Logitech para ofrecerte productos originales con el mejor precio del mercado.</p>
 </section>
